@@ -8,6 +8,17 @@ def encode(password):
     return encoded_password
 
 
+# Harrison Chojnowski Decode Funciton
+def decode(password):
+    decoded_password = ''
+    for num in password:
+        num = int(num)
+        num -= 3
+        if num < 0:
+            num += 10
+        decoded_password += str(num)
+    return decoded_password
+
 
 program = True
 
