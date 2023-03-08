@@ -3,7 +3,10 @@
 def encode(password):
     encoded_password = ''
     for num in password:
-        new_num = int(num) + 3
+        num = int(num)
+        new_num = (num) + 3
+        if new_num > 9:
+            new_num -= 10
         encoded_password += str(new_num)
     return encoded_password
 
@@ -36,6 +39,6 @@ while program == True:
         print('Your password has been encoded and stored!')
 
     if option == 2:
-        print(f'The endcoded password is {encoded_password}, and the original password is {decoder(encoded_password)}.')
+        print(f'The endcoded password is {encoded_password}, and the original password is {decode(encoded_password)}.')
     if option == 3:
         program = False
